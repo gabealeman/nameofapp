@@ -32,6 +32,9 @@
     <div class="col-sm-6 col-md-6 col-md-offset-2">
       
       <%= render 'comments' %>
+      <div class="pager">
+      <%= will_paginate @comments, render: BootstrapPagination::Rails %>
+      </div>
 
 
       <div>
