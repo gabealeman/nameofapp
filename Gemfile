@@ -63,3 +63,7 @@ gem 'will_paginate-bootstrap'
 gem 'rollbar'
 
 gem 'oj', '~> 2.12.14'
+
+group :development, :test do
+	gem 'rspec-rails', '~> 3.4'
+end
