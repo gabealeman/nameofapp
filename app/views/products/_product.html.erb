@@ -6,10 +6,13 @@
         <h3><%= product.name %></h3>
         <p><%= product.description %></p>
         <p><%= product.color %></p>
+        <p>Average Rating: <div class="rated" data-score="<%= product.average_rating %>"></div> </p>
         <strong>$<%= product.price %></strong><br>
-        <button type="button" class="btn btn-default"><%= link_to 'Show', product %></button>
-        <button type="button" class="btn btn-default"><%= link_to 'Edit', edit_product_path(product) %></button>
-        <button type="button" class="btn btn-default"><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+        <%= link_to 'Show', product, class: "btn btn-default" %>
+        <% if signed_in? && current_user.admin? %>
+          <%= link_to 'Edit', edit_product_path(product), class: "btn btn-default" %>
+          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+        <% end %>
       </div><!-- /col -->
       <% end %>
     </div>

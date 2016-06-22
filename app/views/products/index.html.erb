@@ -1,13 +1,10 @@
 <div class="container">
-<p id="notice"><%= notice %></p>
-<h1>Listing Products</h1>
-
-  <%= render 'product' %>
-
-<br>
-<button type="button" class="btn btn-default">
-<%= link_to 'New Product', new_product_path %>
-</button>
-
+	<p id="notice"><%= notice %></p>
+	<h1>Listing Products</h1>
+	<%= render 'product' %>
+	<br>
+	<% if signed_in? && current_user.admin? %>
+		<%= link_to 'New Product', new_product_path, class: "btn btn-default" %>
+	<% end %>
 </div>
 

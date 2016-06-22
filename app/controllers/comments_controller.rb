@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
   def create
-  	@product = Product.find(params[:product_id])
+    @product = Product.find(params[:product_id])
     @comment = @product.comments.new(comment_params)
     @comment.user = current_user
     respond_to do |format|
@@ -15,11 +15,13 @@ class CommentsController < ApplicationController
     end
   end
 
-	def destroy if signed_in? && current_user.admin?
-    @comment = Comment.find(params[:id])
-    product = @comment.product
-    @comment.destroy
-    redirect_to product
+	def destroy
+		if signed_in? && current_user.admin?
+      @comment = Comment.find(params[:id])
+      product = @comment.product
+      @comment.destroy
+      redirect_to product
+    end
 	end
 
 	private
