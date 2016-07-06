@@ -9,9 +9,7 @@
         <p>Average Rating: <div class="rated" data-score="<%= product.average_rating %>"></div> </p>
         <strong>$<%= product.price %></strong><br>
         <%= link_to 'Show', product, class: "btn btn-default" %>
-        <%= form_tag "/payments/create" do %>
-          <%= render partial: "shared/stripe_checkout_button" %>
-        <% end %>
+
         <% if signed_in? && current_user.admin? %>
           <%= link_to 'Edit', edit_product_path(product), class: "btn btn-default" %>
           <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
