@@ -9,7 +9,6 @@ $(document).on('ready page:load', function(){
 
   $('.img-zoom').elevateZoom(); 
 
-  $(".mCustomScrollbar").mCustomScrollbar({axis:"x"
-	});
+  $(".mCustomScrollbar").mCustomScrollbar({axis:"x"});
 	
 });

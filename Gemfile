@@ -76,4 +76,6 @@ group :development, :test do
   gem 'guard-spork'
 end
 
+gem 'angularjs-rails'
+
 
