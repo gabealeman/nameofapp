@@ -3,6 +3,7 @@ var app = angular.module('shop', ['ngResource']);
 $(document).on('ready page:load', function() {
 	angular.bootstrap(document.body, ['shop'])
 });
+
 app.factory('models', ['$resource', function($resource){
 	var orders_model = $resource("/orders/:id.json", {id: "@id"});
 	var products_model = $resource("/products/:id.json", {id: "@id"});
@@ -25,12 +26,12 @@ app.controller('OrdersCtrl', ['$scope', 'models', function($scope, models){
 			$scope.orders.push(recent_order);
 			$scope.newOrder = '';
 		});
-	}
+	};
 
 	$scope.deleteOrder = function(order){
 		models.orders.delete(order);
 		$scope.orders.splice($scope.orders.indexOf(order), 1);
-
-	}
+	};
 	
+
 }]);
