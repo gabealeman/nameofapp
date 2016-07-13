@@ -33,4 +33,5 @@ app.controller('OrdersCtrl', ['$scope', 'models', function($scope, models){
 		$scope.orders.splice($scope.orders.indexOf(order), 1);
 
 	}
+	
 }]);
