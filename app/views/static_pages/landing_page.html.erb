@@ -1,6 +1,8 @@
+<% sleep 2 %>
 <h2>Featured Product:</h2>
 <div id="carousel-custom" class="carousel slide" data-ride="carousel">  
   <!-- Wrapper for slides -->
+  <% cache do %>
   <div class="carousel-outer">
     <div class="carousel-inner">
     	<% @products.each do |product| %>
@@ -24,5 +26,6 @@
     <li data-target="#carousel-custom" data-slide-to="2"><%= image_tag(product.image_url, class: "img-responsive") %></li>
     <li data-target="#carousel-custom" data-slide-to="3"><%= image_tag(product.image_url, class: "img-responsive") %></li>
     <% end %>
+  <% end %>
   </ol>
 </div>

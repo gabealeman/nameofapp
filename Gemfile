@@ -76,4 +76,6 @@ end
 
 gem 'angularjs-rails'
 
+gem 'dalli'
+
 
