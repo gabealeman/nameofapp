@@ -78,4 +78,8 @@ gem 'angularjs-rails'
 
 gem 'dalli'
 
+gem 'redis-rails'
+
+gem 'newrelic_rpm'
+
 
