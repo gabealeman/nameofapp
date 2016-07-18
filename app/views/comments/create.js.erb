@@ -1,2 +1,10 @@
 $("#new_comment").html("Thank you for your review!");
-$('.prodoct-review').prepend("<%= j render @comment %>");
+$('.product-review').prepend("<%= j render @comment %>");
+
+$('.rating').raty( { path: '/assets', scoreName: 'comment[rating]' });
+$('.rated').raty({ path: '/assets',
+  readOnly: true,
+  score: function() {
+    return $(this).attr('data-score');
+  }
+});
