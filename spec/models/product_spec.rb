@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe Product do
 	before do
-		@product = Product.create!(name: "race bike")
-		@user = User.create!(email: "rspec@practice.com", password: "123456")
+		@product = create(:product)
+		@user = create(:user)
 		@product.comments.create!(rating: 1, user: @user, body: "Awful bike!")
 		@product.comments.create!(rating: 3, user: @user, body: "Ok bike!")
 		@product.comments.create!(rating: 5, user: @user, body: "Awesome bike!")

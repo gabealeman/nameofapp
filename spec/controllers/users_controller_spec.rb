@@ -21,7 +21,12 @@ describe UsersController, :type => :controller do
 
 		end
 
-		context "No user is logged in" do
+		context "no user is logged in" do
+			
+			before do 
+				sign_out @user
+			end
+
 			it "redirects to login" do
 				get :show, id: @user.id 
 				expect(response.status).to eq 200

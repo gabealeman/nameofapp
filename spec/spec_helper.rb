@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'factory_girl_rails'
+require 'support/factory_girl'
 require 'spork'
 #uncomment the following line to use spork with the debugger
 #require 'spork/ext/ruby-debug'
