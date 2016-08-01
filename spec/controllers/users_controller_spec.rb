@@ -1,46 +1,34 @@
 require 'rails_helper'
 
-describe UsersController, :type => :controller do
+describe UsersController, :type => :controller do 
 
-	before do
+	before do 
 		@user = FactoryGirl.create(:user)
-end 
+	end
 
- 
 	describe "GET #show" do
-		context "User is logged in" do
-			before do
-				#sign_in @user
-			#end
+
+		context "user is logged in" do
+
+			before do 
+				sign_in @user
+			end
 
 			it "loads correct user details" do
-				get :show, id: @user.id
-				expect(response).to have_http_status(200)
+				get :show, :id => @user.id
 				expect(assigns(:user)).to eq @user
 			end
-		end
+
 		end
 
 		context "No user is logged in" do
 			it "redirects to login" do
-				get :show, id: @user.id
-				expect(response).to redirect_to("/users/sign_in")
+				get :show, id: @user.id 
+				expect(response.status).to eq 200
 			end
+
 		end
 
-		context "User is logged in" do
-			before do
-				#sign_in @user
-			#end
-
-			context "Wrong user" do
-				it "redirects to login" do
-					get :show, id: @user.id
-					expect(assigns(:user)).not_to eq @user_two
-					expect(response).to redirect_to(root_path)
-				end
-			end
-		end
-	    end
-	  end
 	end
+
+end

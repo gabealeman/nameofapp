@@ -3,12 +3,12 @@ FactoryGirl.define do
 	
 	factory :user do
 		email 
-    password "123456"
+    	password "123456"
 	end
 
 	factory :admin, class: User do
-  	email
-  	password "123456"
-  end
+  		email
+  		password "123456"
+	end
 	
 end
