@@ -13,4 +13,14 @@ class UserMailer < ApplicationMailer
   	mail( :to => user.email,
   		  :subject => "Welcome to #{@appname}")
   end
+
+  def order_created(order)
+    @order = order
+    mail( :to => user.email,
+        :subject => "Order was created succesfully")
+  end
+
+
+
+
 end

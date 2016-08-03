@@ -32,6 +32,10 @@ class OrdersController < ApplicationController
 		request.format.json?
 	end
 
+	def set_order
+		@order = Order.find(params[:id])
+	end
+
 	def order_params
 		params.require(:order).permit(:product_id, :user_id, :total)
 	end
