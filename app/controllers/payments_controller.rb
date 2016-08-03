@@ -27,7 +27,7 @@ class PaymentsController < ApplicationController
 
 		
 		
-		redirect_to product_path(@product)
+		redirect_to static_pages_order_created_path
 	
 	end
 
