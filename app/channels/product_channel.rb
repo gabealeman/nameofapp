@@ -13,3 +13,5 @@ class ProductChannel < ApplicationCable::Channel
     stop_all_streams
     stream_for data["product_id"] #if data["product_id"]
   end
+
+end
