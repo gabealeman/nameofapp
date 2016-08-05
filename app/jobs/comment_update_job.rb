@@ -11,4 +11,3 @@ class CommentUpdateJob < ApplicationJob
       CommentsController.render(partial: 'comments/comment', locals: {comment: comment, current_user: current_user })
     end
 end
-Contact GitHub API Training Shop Blog About

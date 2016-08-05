@@ -24,5 +24,3 @@ App.product = App.cable.subscriptions.create({channel: "ProductChannel"}, {
 $(document).on('turbolinks:load', function() {
   App.product.listen_to_comments();
 });
-Contact GitHub API Training Shop Blog About
-
