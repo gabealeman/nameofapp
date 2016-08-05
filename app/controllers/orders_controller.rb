@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
 	protect_from_forgery prepend: true.
-	skip_before_action :verify_authenticity_token, if: :json_request?
+	#skip_before_action :verify_authenticity_token, if: :json_request?
 	respond_to :json, :html
 	load_and_authorize_resource
 	
