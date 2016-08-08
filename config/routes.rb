@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  mount ActionCable.server => '/cable'
+  
   devise_for :users , :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}, :controllers => { :registrations => "user_registrations"}
   resources :products do
     resources :comments
@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   post 'payments/create'
 
   get 'static_pages/order_created'
+
+  mount ActionCable.server => '/cable'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
